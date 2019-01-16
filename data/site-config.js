@@ -1,7 +1,8 @@
 module.exports = {
   site: {
     name: "Batch's Gatsby Starter",
-    url: 'https://gatsby-starter-batch-prismic.netlify.com', // No trailing slash
+    url:
+      'https://5c3e99c2df9ecb00082fbf27--gatsby-starter-batch-prismic.netlify.com', // No trailing slash
     title: "Batch's Gatsby Starter",
     description: 'A GatsbyJS stater with Advanced design in mind.', // Used in the meta description
     keywords:
