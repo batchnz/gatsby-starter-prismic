@@ -9,6 +9,9 @@ import TwitterCard from './TwitterCard'
 const SEOLayout = ({ location }) => {
   const { name, url, title, description, keywords } = config.site
   const imageUrl = `${url}/${config.siteImage}` // Default image stored in ./static
+  const pathname =
+    (location.pathname && location.pathname.replace(/\/?$/, '/')) || ''
+
   return (
     <>
       <Helmet>
@@ -16,7 +19,7 @@ const SEOLayout = ({ location }) => {
         <meta name="title" content={title} />
         <meta name="description" content={description} />
         <meta name="keywords" content={keywords} />
-        <link rel="canonical" href={url + location.pathname || ''} />
+        <link rel="canonical" href={url + pathname} />
       </Helmet>
       <OpenGraph
         title={title}
@@ -24,7 +27,7 @@ const SEOLayout = ({ location }) => {
         siteName={name}
         description={description}
         image={imageUrl}
-        url={url + location.pathname || ''}
+        url={url + pathname}
       />
       <TwitterCard
         title={title}
