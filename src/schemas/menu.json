@@ -1,0 +1,31 @@
+{
+  "Main": {
+    "uid": {
+      "type": "UID",
+      "config": {
+        "label": "UID"
+      }
+    },
+    "title": {
+      "type": "Text",
+      "config": {
+        "label": "Title"
+      }
+    },
+    "order": {
+      "type": "Number",
+      "config": {
+        "label": "Order",
+        "placeholder": "Ascending"
+      }
+    },
+    "link": {
+      "type": "Link",
+      "config": {
+        "select": "document",
+        "customtypes": ["page", "posts_index"],
+        "label": "Link"
+      }
+    }
+  }
+}

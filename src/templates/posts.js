@@ -40,20 +40,19 @@ const PostTemplate = ({ data, pageContext, location }) => {
           post.tags.length > 0 &&
           post.tags.map(item => {
             const { tag } = item
-            const { title } = tag.document[0].data
+            const { title } = tag.document.data
             if (tag.isBroken) return null
             return (
               <PostLabel text={title} slug={`/tags/${tag.slug}`} key={tag.id} />
             )
           })}
-        {post.category &&
-          !post.category.isBroken && (
-            <PostLabel
-              text={post.category.document[0].data.title}
-              slug={`/categories/${post.category.uid}`}
-              key={post.category.uid}
-            />
-          )}
+        {post.category && !post.category.isBroken && (
+          <PostLabel
+            text={post.category.document.data.title}
+            slug={`/categories/${post.category.uid}`}
+            key={post.category.uid}
+          />
+        )}
       </div>
 
       {localImage && (
@@ -117,8 +116,11 @@ export const postQuery = graphql`
             category {
               uid
               document {
-                data {
-                  title
+                ... on PrismicPostsCategories {
+                  id
+                  data {
+                    title
+                  }
                 }
               }
             }
@@ -128,8 +130,11 @@ export const postQuery = graphql`
                 slug
                 isBroken
                 document {
-                  data {
-                    title
+                  ... on PrismicPostsTags {
+                    id
+                    data {
+                      title
+                    }
                   }
                 }
               }

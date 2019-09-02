@@ -1,0 +1,98 @@
+{
+  "Contact": {
+    "addresses": {
+      "type": "Group",
+      "config": {
+        "fields": {
+          "title": {
+            "type": "StructuredText",
+            "config": {
+              "single": "paragraph",
+              "label": "Title"
+            }
+          },
+          "address": {
+            "type": "StructuredText",
+            "config": {
+              "multi": "paragraph",
+              "label": "Address"
+            }
+          },
+          "coordinates": {
+            "type": "GeoPoint",
+            "config": {
+              "label": "Coordinates"
+            }
+          }
+        },
+        "label": "Addresses"
+      }
+    },
+    "email": {
+      "type": "Group",
+      "config": {
+        "fields": {
+          "title": {
+            "type": "StructuredText",
+            "config": {
+              "single": "paragraph",
+              "label": "Title"
+            }
+          },
+          "email_address": {
+            "type": "StructuredText",
+            "config": {
+              "single": "paragraph",
+              "label": "Email Address"
+            }
+          }
+        },
+        "label": "Email Addresses"
+      }
+    },
+    "phone": {
+      "type": "Group",
+      "config": {
+        "fields": {
+          "title": {
+            "type": "StructuredText",
+            "config": {
+              "single": "paragraph",
+              "label": "Title"
+            }
+          },
+          "phone_number": {
+            "type": "StructuredText",
+            "config": {
+              "single": "paragraph",
+              "label": "Phone Number"
+            }
+          }
+        },
+        "label": "Phone Numbers"
+      }
+    }
+  },
+  "Social Media": {
+    "facebook_link": {
+      "type": "Link",
+      "config": {
+        "label": "Facebook Link"
+      }
+    },
+    "twitter_handle": {
+      "type": "StructuredText",
+      "config": {
+        "single": "paragraph",
+        "label": "Twitter Handle"
+      }
+    },
+    "instagram_handle": {
+      "type": "StructuredText",
+      "config": {
+        "single": "paragraph",
+        "label": "Instagram Handle"
+      }
+    }
+  }
+}

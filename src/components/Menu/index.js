@@ -58,7 +58,7 @@ const Menu = ({ menuList }) => (
             // If no relationship filed or Relationship link is broken, return null
             if (!node.data.link || node.data.link.isBroken) return null
             // Slug is page's slug, relationship filed
-            const slug = node.data.link.document[0].uid
+            const slug = node.data.link.document.uid
             return (
               <MenuItem
                 title={node.data.title}

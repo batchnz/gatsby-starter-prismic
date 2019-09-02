@@ -1,5 +1,9 @@
 const config = require('./config/site')
 
+require('dotenv').config({
+  path: `.env`,
+})
+
 const { RichText } = require('prismic-reactjs')
 const { Elements } = RichText
 
@@ -95,6 +99,17 @@ module.exports = {
       options: {
         repositoryName: config.prismic.repository,
         accessToken: process.env.PRISMIC_TOKEN,
+        schemas: {
+          contact: require('./src/schemas/contact.json'),
+          home: require('./src/schemas/home.json'),
+          menu: require('./src/schemas/menu.json'),
+          options: require('./src/schemas/options.json'),
+          pages: require('./src/schemas/pages.json'),
+          posts_categories: require('./src/schemas/posts_categories.json'),
+          posts_index: require('./src/schemas/posts_index.json'),
+          posts_tags: require('./src/schemas/posts_tags.json'),
+          posts: require('./src/schemas/posts.json'),
+        },
         // See: https://prismic.io/docs/javascript/query-the-api/link-resolving
         linkResolver: () => doc => `/${doc.uid}`,
         // See: https://prismic.io/docs/nodejs/beyond-the-api/html-serializer
