@@ -40,18 +40,11 @@ PostTagsTemplate.propTypes = {
   pageContext: PropTypes.object.isRequired,
   location: PropTypes.object.isRequired,
 }
-
 export const postTagsQuery = graphql`
   query PostsByTag($uid: String!) {
     allPrismicPosts(
       filter: {
-        data: {
-          tags: {
-            elemMatch: {
-              tag: { document: { elemMatch: { uid: { eq: $uid } } } }
-            }
-          }
-        }
+        data: { tags: { elemMatch: { tag: { uid: { eq: "Tag Three" } } } } }
       }
     ) {
       totalCount
