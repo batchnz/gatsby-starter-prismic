@@ -10,7 +10,7 @@
   "author": "Batch <development@batch.nz>",
   "dependencies": {
     "autoprefixer": "^9.2.1",
-    "axios": "^0.18.0",
+    "axios": "^0.21.1",
     "formik": "^1.4.2",
     "gatsby": "^2.0.25",
     "gatsby-awesome-pagination": "^0.3.3",
